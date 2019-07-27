@@ -15,5 +15,8 @@ filenames = [
 with open("result.csv", "w") as f:
     for index, filename in enumerate(filenames):
         f.write(nltk.corpus.gutenberg.raw(filename))
+        # Append a comma to the file content when
+        # filename is not the content of the
+        # last file in the list
         if index != (len(filenames) - 1):
             f.write(",")
